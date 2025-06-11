@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/*Modo Escuro/modoclaro*/
+:root{
+    --text-color:white;
+    --bg-url:url(assets/bg-mobile.jpg);
+    --stroke-color:rgba(255, 255, 255, 0.5);
+    --surface-color:rgba(255, 255, 255, 0.05);
+    --surface-color-hover:rgba(255, 255, 255, 0.02);
+    --switch-bg-url:url(assets/mon-stars.svg);
+}
+.light{
+    --text-color:black;
+    --bg-url:url(assets/bg-mobile-light.jpg);
+    --stroke-color:rgba(0, 0, 0, 0.5);
+    --surface-color-hover:rgba(0, 0, 0, 0.05);
+    --surface-color:rgba(0, 0, 0, 0.02);
+    --switch-bg-url:url(assets/sun.svg);
+}
+body{
+    background: var(--bg-url) no-repeat top center /cover;
+}
+body * {
+    font-family: "Inter", sans-serif;
+    color: var(--text-color);
+}
+#Container {
+    margin: 56px auto 0px;
+    width: 360px;
+    padding: 0 24px;
+}
+
+/*Imagem de perfil*/
+#profile{
+    text-align: center;
+    padding: 24px;
+}
+#profile img{
+    width: 112px;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+
+/*Botão de Switch*/
+#switch {
+    position:relative;
+    width: 64px;
+    margin: 4px auto;
+}
+
+#switch button{
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+
+    position: absolute;
+    left: 0;
+    top:50%;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+#switch span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+.light #switch button{
+    right: 0;
+    left: initial;
+}
+
+/*Links*/
+#LinkCanal{
+    margin-top: 8px;
+    font-family: "Inter" ;
+    font-weight: 500;
+    line-height: 24px;
+    display: block;
+}
+ul{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+ul li img {
+   height: 60px; 
+   position: absolute;
+   z-index: 1;
+   padding-top: 12px;
+   padding-left: 24px;
+}
+ul li a{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    font-family: "Inter";
+    font-weight: 500;
+    transition: background 0.2s ;
+    font-size: 20px;
+}
+
+ul li a:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+}
+
+/*Meu Jaba*/
+footer{
+    margin-top: 112px;
+    text-align: center;
+    font-size: 14px;
+}
+footer a {
+    text-decoration: underline;
+}
